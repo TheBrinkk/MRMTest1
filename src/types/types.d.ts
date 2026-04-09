@@ -1,6 +1,7 @@
 export interface CallToAction {
   text: string;
   href: string;
+  linkOut?: boolean;
   variant?: "primary" | "secondary" | "link";
   icon?: string;
   ariaLabel?: string;
@@ -13,7 +14,23 @@ export interface Feature {
   iconClass?: string;
 }
 
+export interface ClientFeature {
+  title: string;
+  description: string;
+  externalUrl: string;
+  href: string;
+  logo?: string;
+  icon?: string;
+  iconClass?: string;
+}
+
+export interface AreaFeature extends Feature {
+  cta: CallToAction;
+}
+
 export type Value = Feature;
+
+export type ClientValue = ClientFeature;
 
 export interface Service {
   title: string;
@@ -21,9 +38,19 @@ export interface Service {
   icon: string;
 }
 
+export interface Price {
+  title: string;
+  description: string;
+  monthly: boolean;
+  price: string;
+  icon: string;
+  features?: string[];
+}
+
 export interface NavLink {
   text: string;
   href: string;
+  children?: NavLink[];
 }
 
 export interface Widget {
@@ -53,6 +80,11 @@ export interface FeaturesProps extends HeadlineProps {
   columns?: number; // Values has columns
 }
 
+export interface AreaFeaturesProps extends HeadlineProps {
+  features?: AreaFeature[];
+  columns?: number; // Values has columns
+}
+
 export interface ContentProps extends HeadlineProps {
   content?: string;
   image?: ImageMetadata;
@@ -68,7 +100,16 @@ export interface ServiceListProps extends HeadlineProps {
   services?: Service[];
 }
 
+export interface PriceListProps extends HeadlineProps {
+  prices?: Price[];
+}
+
 export interface ValuesProps extends HeadlineProps {
   items?: Value[];
+  columns?: 1 | 2 | 3 | 4;
+}
+
+export interface ClientsProps extends HeadlineProps {
+  items?: WebValue[];
   columns?: 1 | 2 | 3 | 4;
 }
