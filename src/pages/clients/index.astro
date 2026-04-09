@@ -1,0 +1,36 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getImage } from "astro:assets";
+import Content2 from "@/components/widgets/Content2.astro";
+import aboutImage from "@/assets/images/about-office.webp";
+
+const metadata = {
+  title: "Clients",
+  description: "Learn more about our clients.",
+};
+
+const optimizedImage = await getImage({
+  src: aboutImage,
+  format: "webp",
+});
+---
+
+<BaseLayout {metadata}>
+  <Content2
+    title="Our Clients"
+    description={[
+      "We are Texans looking to help Texans help more people. We have standards that we want to apply to marketing, we only work with companies that have proven that they our up to our standards. We take serious consideration for clients that show they are doing good for their communities and show Texan pride. We give Veterans discounts and prioritize giving back for any client we take on. We are selective in who we give our expertise to, we want to help build reputation.",
+    ]}
+    tagline="Clients"
+    image={aboutImage}
+    imageAlt="Modern web development office"
+    actions={[
+      {
+        text: "Contact Us",
+        href: "/contact",
+        variant: "primary",
+        icon: "lucide:mail",
+      },
+    ]}
+  />
+</BaseLayout>
