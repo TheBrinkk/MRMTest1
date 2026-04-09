@@ -23,15 +23,18 @@ export const siteConfig = {
       text: "Clients",
       href: "/clients",
       children: [
-        { text: "San Antonio", href: "/clients/san-antonio" },
+        { text: "San Antonio", href: "/clients/areas/san-antonio" },
         {
           text: "New Braunfels",
-          href: "/clients/new-braunfels",
+          href: "/clients/areas/new-braunfels",
           children: [
-            { text: "Canyon Lake", href: "/clients/new-braunfels/canyon-lake" },
+            {
+              text: "Canyon Lake",
+              href: "/clients/areas/new-braunfels/canyon-lake",
+            },
           ],
         },
-        { text: "Seguin", href: "/clients/seguin" },
+        { text: "Seguin", href: "/clients/areas/seguin" },
       ],
     },
     { text: "Contact", href: "/contact" },
