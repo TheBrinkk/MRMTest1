@@ -3,7 +3,7 @@ import ogImage from "@/assets/og-image.png";
 export const siteConfig = {
   name: "Mission Ridge Marketing",
   description: "Digital Marketing and Solutions.",
-  url: "https://missionridgetx.com",
+  url: "https://thebrinkk.github.io/MRMTest1/",
   lang: "en",
   locale: "en_US",
   author: "Mission Ridge Marketing LLC",
