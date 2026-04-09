@@ -17,27 +17,35 @@ export const siteConfig = {
     discord: "#",
   },
   navLinks: [
-    { text: "Home", href: "/" },
+    { text: "Home", href: import.meta.env.BASE_URL + "/" },
     //{ text: "Services", href: "/services" },
     {
       text: "Clients",
-      href: "/clients",
+      href: import.meta.env.BASE_URL + "/clients",
       children: [
-        { text: "San Antonio", href: "/clients/areas/san-antonio" },
+        {
+          text: "San Antonio",
+          href: import.meta.env.BASE_URL + "/clients/areas/san-antonio",
+        },
         {
           text: "New Braunfels",
-          href: "/clients/areas/new-braunfels",
+          href: import.meta.env.BASE_URL + "/clients/areas/new-braunfels",
           children: [
             {
               text: "Canyon Lake",
-              href: "/clients/areas/new-braunfels/canyon-lake",
+              href:
+                import.meta.env.BASE_URL +
+                "/clients/areas/new-braunfels/canyon-lake",
             },
           ],
         },
-        { text: "Seguin", href: "/clients/areas/seguin" },
+        {
+          text: "Seguin",
+          href: import.meta.env.BASE_URL + "/clients/areas/seguin",
+        },
       ],
     },
-    { text: "Contact", href: "/contact" },
-    { text: "Widgets", href: "/widgets" },
+    { text: "Contact", href: import.meta.env.BASE_URL + "/contact" },
+    { text: "Widgets", href: import.meta.env.BASE_URL + "/widgets" },
   ],
 };
