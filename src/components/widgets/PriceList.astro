@@ -55,12 +55,15 @@ const { container: containerClassProp = "", ...otherClasses } = classes;
                 {s.monthly ? "per month" : "setup fee"}
               </h5>
             </div>
-            <button class="mt-8 p-6 font-semibold flex items-center gap-2 group/btn hover:underline transition-all bg-blue-900 w-full sm:w-auto rounded-xl text-background dark:text-white transform hover:scale-105 shadow-lg shadow-primary/20">
-              View details
+            <a
+              href="/contact"
+              class="mt-8 p-6 font-semibold flex items-center gap-2 group/btn hover:underline transition-all bg-blue-900 w-full sm:w-auto rounded-xl text-background dark:text-white transform hover:scale-105 shadow-lg shadow-primary/20"
+            >
+              Contact Us To Get Started
               <span class="transition-transform group-hover/btn:translate-x-1">
                 →
               </span>
-            </button>
+            </a>
             {s.features ? (
               <ul class="m-8">
                 {s.features.map((f) => (
