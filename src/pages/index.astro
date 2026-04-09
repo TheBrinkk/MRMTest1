@@ -5,20 +5,67 @@ import Hero from "@/components/widgets/Hero.astro";
 import Features from "@/components/widgets/Features.astro";
 import devImg from "@/assets/images/dev_balanced.png";
 import openSourceImg from "@/assets/images/open-source.png";
+import Content from "@/components/widgets/Content.astro";
 import Content2 from "@/components/widgets/Content2.astro";
+import PriceList from "@/components/widgets/PriceList.astro";
+
 const metadata = {
-  title: `${siteConfig.name} — The next step for your project`,
+  title: `${siteConfig.name} — Central Texas Digital Marketers`,
   description:
     "A modern and professional template for your web projects with Astro and Tailwind CSS. Boost your development with a solid foundation.",
   ignoreTitleTemplate: true,
 };
+
+const prices = [
+  {
+    title: "Starter Setup",
+    description:
+      "Get setup for the basics, we will get you on the digital map and start getting Texans to see you.",
+    price: "1500",
+    monthly: false,
+    features: [
+      "Google Business Listing",
+      "Google Analytics",
+      "Custom Solution Planning",
+    ],
+    icon: "lucide:globe",
+  },
+  {
+    title: "Actively Pursue",
+    description: "Set up digital advertising to draw customers in.",
+    price: "$2500",
+    monthly: true,
+    features: [
+      "Google Ads Campaigns",
+      "Customer Relationship Management",
+      "Find out where your leads find you",
+      "You control the process",
+      "* Your budget adds to the cost",
+    ],
+    icon: "lucide:search-alert",
+  },
+  {
+    title: "Automate Outreach",
+    description:
+      "Leverage all the available technology to make your customers lives easier and their experience outstanding.",
+    price: "$5000",
+    monthly: true,
+    features: [
+      "Advanced campaigns to drive engagement",
+      "Referral Plans",
+      "Automated Solutions Planning",
+      "",
+    ],
+    icon: "lucide:brain-cog",
+  },
+];
 ---
 
 <BaseLayout {metadata}>
   <Hero
-    title={`Starter Template for <br class="hidden md:block" /> <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Web Developers</span>`}
-    tagline="Astro v5 + Tailwind v4"
-    description={`${siteConfig.description}`}
+    title={`Central Texas based <br class="hidden md:block" /> <span class="bg-linear-to-r from-rose-700 via-blue-400 to-blue-900 bg-clip-text text-transparent">Web Marketing</span>`}
+    tagline={`${siteConfig.description}`}
+    description={`<p>We take pride in supporting central Texas businesses that make us proud.</p><p>We support those who give back to their community.</p><p> We help Texans get exposure and help them establish themselves in the digital world.</p>`}
     actions={[
       {
         text: "Get Started",
@@ -35,28 +82,39 @@ const metadata = {
       },
     ]}
   />
+
+  <Content
+    tagline="Services"
+    title="Our Services"
+    description={[
+      "Comprehensive solutions designed to maximize the potential of your digital presence.",
+    ]}
+  />
+  <PriceList prices={prices} classes={{ container: "pt-0 md:pt-0" }} />
+
   <Features
     tagline="Features"
     title="What's Included"
     subtitle="A selection of tools and configurations to streamline your workflow."
     features={[
       {
-        title: "Optimized SEO",
+        title: "We will cater to you",
         description:
-          "Base configuration for Meta tags, Open Graph, and Sitemap generation.",
+          "Every client is different, they all have different goals, we will cater to your needs and work with you the whole way through.",
         icon: "lucide:scan-search",
         iconClass: "bg-blue-500/10 text-blue-400",
       },
       {
-        title: "High Performance",
-        description: "Lightweight structure for fast load times.",
+        title: "Efficient Ad Campaigns",
+        description:
+          "Creating custom ad campaigns to find the people you are looking for is our goal. Get your customers to find you when they need you. ",
         icon: "lucide:zap",
         iconClass: "bg-purple-500/10 text-purple-400",
       },
       {
-        title: "Tailwind v4",
+        title: "Leveraging Technology",
         description:
-          "Integrated configuration with the latest version of Tailwind CSS.",
+          "We aim to take the manual processes to the next level by automating the flow and streamlining the process.",
         icon: "lucide:palette",
         iconClass: "bg-pink-500/10 text-pink-400",
       },

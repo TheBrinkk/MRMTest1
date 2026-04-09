@@ -1,0 +1,79 @@
+---
+import WidgetWrapper from "./WidgetWrapper.astro";
+import type { PriceListProps } from "@/types/types";
+import Card from "@/components/ui/Card.astro";
+import Headline from "@/components/ui/Headline.astro";
+import { Icon } from "astro-icon/components";
+
+const {
+  prices = [],
+  title = "",
+  subtitle = "",
+  tagline = "",
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render("bg"),
+} = Astro.props as PriceListProps;
+
+const { container: containerClassProp = "", ...otherClasses } = classes;
+---
+
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={` ${containerClassProp}`}
+  bg={bg}
+  classes={otherClasses}
+>
+  <Headline
+    title={title}
+    subtitle={subtitle}
+    tagline={tagline}
+    classes={{
+      container: "max-w-3xl mx-auto text-center",
+    }}
+  />
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {
+      prices.map((s) => (
+        <Card class="group relative overflow-hidden hover:bg-muted/50 hover:shadow-md">
+          <div class="absolute -right-4 -top-4 text-8xl opacity-10 transition-transform group-hover:scale-110 group-hover:rotate-12 select-none">
+            <Icon name={s.icon} class="w-32 h-32" />
+          </div>
+          <div class="text-left relative z-10">
+            <div class="text-4xl mb-6 text-primary">
+              <Icon name={s.icon} class="w-12 h-12" />
+            </div>
+            <h3 class="text-2xl font-bold text-foreground mb-4">{s.title}</h3>
+            <p class="text-muted-foreground leading-relaxed min-h-32">
+              {s.description}
+            </p>
+            <div class="flex flex-row m-4">
+              <h2 class="text-4xl font-bold text-foreground mr-2">{s.price}</h2>
+              <h5 class="text-lg text-foreground">
+                {s.monthly ? "per month" : "setup fee"}
+              </h5>
+            </div>
+            <button class="mt-8 p-6 font-semibold flex items-center gap-2 group/btn hover:underline transition-all bg-blue-900 w-full sm:w-auto rounded-xl text-background dark:text-white transform hover:scale-105 shadow-lg shadow-primary/20">
+              View details
+              <span class="transition-transform group-hover/btn:translate-x-1">
+                →
+              </span>
+            </button>
+            {s.features ? (
+              <ul class="m-8">
+                {s.features.map((f) => (
+                  <li class="flex gap-x-2">
+                    <Icon name="lucide:check" class="w-4 h-4 flex-none mt-1" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            ) : undefined}
+          </div>
+        </Card>
+      ))
+    }
+  </div>
+</WidgetWrapper>
