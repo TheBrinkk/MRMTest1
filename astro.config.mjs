@@ -6,7 +6,8 @@ import icon from "astro-icon";
 import remarkReadingTime from "remark-reading-time";
 
 export default defineConfig({
-  site: "https://missionridgetx.com/",
+  site: "https://thebrinkk.github.io/",
+  base: "/MRMTest1",
   integrations: [sitemap(), icon(), mdx()],
   markdown: {
     remarkPlugins: [
