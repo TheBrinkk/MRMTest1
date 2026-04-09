@@ -1,0 +1,55 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Clients from "@/components/widgets/Clients.astro";
+
+const clientValuesProps = {
+  items: [
+    {
+      title: "Chesapeake Roofing and Restoration",
+      description: "Roofing Company we ran ad campaigns for",
+      externalUrl: "https://www.chesapeakeroofingtx.com",
+      href: "/clients/chesapeake-roofing-tx/",
+      logo: "https://chesapeakeroofingtx.com/wp-content/uploads/2025/07/logo-transparent-png-1.png",
+    },
+    {
+      title: "Your Business Here",
+      description:
+        "Let us help get your name on San Antonio Google Searches and Ads.",
+    },
+    {
+      title: "Startups",
+      description:
+        "Donec sed orci tincidunt, aliquam nisl a, condimentum nunc. Nulla varius ex nec ante feugiat.",
+    },
+    {
+      title: "SaaS",
+      description:
+        "Phasellus tristique, elit dapibus cursus facilisis, lorem augue fringilla nunc, vitae fermentum.",
+    },
+    {
+      title: "Education",
+      description:
+        "In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et.",
+    },
+    {
+      title: "Real Estate",
+      description:
+        "Fusce at massa nec sapien auctor gravida in in tellus. Vivamus a tristique metus, et molestie.",
+    },
+  ],
+  columns: 1 as const,
+  tagline: "Clients",
+  title: "Seguin",
+  subtitle: "Local Texan businesses we work for",
+};
+
+const metadata = {
+  title: "Seguin - Mission Ridge Marketing LLC",
+  description: "Showcase of Seguin area clients.",
+  ignoreTitleTemplate: true,
+};
+---
+
+<BaseLayout {metadata}>
+  <Clients {...clientValuesProps} />
+</BaseLayout>

@@ -1,0 +1,24 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Hero from "@/components/widgets/Hero.astro";
+
+const heroProps = {
+  title: "Chesapeake Roofing and Restoration",
+  tagline: "Ad Campaigns",
+  description:
+    "We helped enhance their Google Ads campaigns to expand their reach, and get more 5 star reviews for their 5 star roofing service. We setup Google Ads, Google Tag Manager, Google Analytics and managed their Google Business Profile and Local Service Ads accounts.",
+  actions: [
+    {
+      text: "View Site",
+      href: "https://chesapeakeroofingtx.com",
+      linkOut: true,
+      variant: "primary",
+      icon: "lucide:house-heart",
+    },
+  ],
+};
+---
+
+<BaseLayout>
+  <Hero {...heroProps} />
+</BaseLayout>
