@@ -8,13 +8,13 @@ export const siteConfig = {
   locale: "en_US",
   author: "Mission Ridge Marketing LLC",
   twitter: "",
-  phonenumber: "(210) 728-2865",
+  phonenumber: "(123) 456-7890",
   ogImage: ogImage,
   socialLinks: {
-    telenumber: "tel:+12107282865",
-    twitter: "",
-    github: "",
-    discord: "",
+    telenumber: "tel:+1234567890",
+    twitter: "#",
+    github: "#",
+    discord: "#",
   },
   navLinks: [
     { text: "Home", href: "/" },
