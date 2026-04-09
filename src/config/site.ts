@@ -1,25 +1,39 @@
 import ogImage from "@/assets/og-image.png";
 
 export const siteConfig = {
-  name: "Astro Starter Pro",
-  description:
-    "Starter template optimized for SEO and performance. A solid foundation to start your projects with best practices.",
-  url: "https://astrostarterpro.com",
+  name: "Mission Ridge Marketing",
+  description: "Digital Marketing and Solutions.",
+  url: "https://missionridgetx.com",
   lang: "en",
   locale: "en_US",
-  author: "Devgelo",
-  twitter: "@Devgelo",
+  author: "Mission Ridge Marketing LLC",
+  twitter: "",
+  phonenumber: "(210) 728-2865",
   ogImage: ogImage,
   socialLinks: {
-    twitter: "https://twitter.com",
-    github: "https://github.com/devgelo-labs/astro-starter-pro",
-    discord: "https://discord.com",
+    telenumber: "tel:+12107282865",
+    twitter: "",
+    github: "",
+    discord: "",
   },
   navLinks: [
     { text: "Home", href: "/" },
-    { text: "About", href: "/about" },
-    { text: "Services", href: "/services" },
-    { text: "Blog", href: "/blog" },
+    //{ text: "Services", href: "/services" },
+    {
+      text: "Clients",
+      href: "/clients",
+      children: [
+        { text: "San Antonio", href: "/clients/san-antonio" },
+        {
+          text: "New Braunfels",
+          href: "/clients/new-braunfels",
+          children: [
+            { text: "Canyon Lake", href: "/clients/new-braunfels/canyon-lake" },
+          ],
+        },
+        { text: "Seguin", href: "/clients/seguin" },
+      ],
+    },
     { text: "Contact", href: "/contact" },
     { text: "Widgets", href: "/widgets" },
   ],
