@@ -1,12 +1,12 @@
 ---
 import WidgetWrapper from "./WidgetWrapper.astro";
-import type { PriceListProps } from "@/types/types";
+import type { ProductListProps } from "@/types/types";
 import Card from "@/components/ui/Card.astro";
 import Headline from "@/components/ui/Headline.astro";
 import { Icon } from "astro-icon/components";
 
 const {
-  prices = [],
+  products = [],
   title = "",
   subtitle = "",
   tagline = "",
@@ -14,7 +14,7 @@ const {
   isDark = false,
   classes = {},
   bg = await Astro.slots.render("bg"),
-} = Astro.props as PriceListProps;
+} = Astro.props as ProductListProps;
 
 const { container: containerClassProp = "", ...otherClasses } = classes;
 ---
@@ -36,7 +36,7 @@ const { container: containerClassProp = "", ...otherClasses } = classes;
   />
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
     {
-      prices.map((s) => (
+      products.map((s) => (
         <Card class="group relative overflow-hidden hover:bg-muted/50 hover:shadow-md">
           <div class="absolute -right-4 -top-4 text-8xl opacity-10 transition-transform group-hover:scale-110 group-hover:rotate-12 select-none">
             <Icon name={s.icon} class="w-32 h-32" />
@@ -52,7 +52,7 @@ const { container: containerClassProp = "", ...otherClasses } = classes;
             <div class="flex flex-row m-4">
               <h2 class="text-4xl font-bold text-foreground mr-2">{s.price}</h2>
               <h5 class="text-lg text-foreground">
-                {s.monthly ? "per month" : "setup fee"}
+                {s.monthly ? "per month" : s.setupFee ? "setup fee" : ""}
               </h5>
             </div>
             <a

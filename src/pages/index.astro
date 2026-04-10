@@ -7,7 +7,7 @@ import devImg from "@/assets/images/dev_balanced.png";
 import openSourceImg from "@/assets/images/open-source.png";
 import Content from "@/components/widgets/Content.astro";
 import Content2 from "@/components/widgets/Content2.astro";
-import PriceList from "@/components/widgets/PriceList.astro";
+import ProductList from "@/components/widgets/ProductList.astro";
 
 const metadata = {
   title: `${siteConfig.name} — Central Texas Digital Marketers`,
@@ -16,13 +16,15 @@ const metadata = {
   ignoreTitleTemplate: true,
 };
 
-const prices = [
+const products = [
   {
     title: "Starter Setup",
     description:
       "Get setup for the basics, we will get you on the digital map and start getting Texans to see you.",
-    price: "1500",
+    price: "500",
     monthly: false,
+    setupFee: true,
+    addon: false,
     features: [
       "Google Business Listing",
       "Google Analytics",
@@ -31,10 +33,11 @@ const prices = [
     icon: "lucide:globe",
   },
   {
-    title: "Actively Pursue",
+    title: "Retainer Services",
     description: "Set up digital advertising to draw customers in.",
     price: "$2500",
     monthly: true,
+    addon: false,
     features: [
       "Google Ads Campaigns",
       "Customer Relationship Management",
@@ -50,10 +53,26 @@ const prices = [
       "Leverage all the available technology to make your customers lives easier and their experience outstanding.",
     price: "$5000",
     monthly: true,
+    addon: false,
     features: [
       "Advanced campaigns to drive engagement",
       "Referral Plans",
       "Automated Solutions Planning",
+      "",
+    ],
+    icon: "lucide:brain-cog",
+  },
+  {
+    title: "Website Changes",
+    description: "We will tackle the changes you need made to your website.",
+    price: "$500",
+    setupFee: false,
+    monthly: false,
+    addon: true,
+    features: [
+      "Optimize Page Speed",
+      "Make Content Changes",
+      "Manage Google scripts",
       "",
     ],
     icon: "lucide:brain-cog",
@@ -90,7 +109,19 @@ const prices = [
       "Comprehensive solutions designed to maximize the potential of your digital presence.",
     ]}
   />
-  <PriceList prices={prices} classes={{ container: "pt-0 md:pt-0" }} />
+  <ProductList
+    products={products.filter((x) => !x.addon)}
+    classes={{ container: "pt-0 md:pt-0" }}
+  />
+  <Content
+    tagline="Addon Services"
+    title="Our Additional Services"
+    description={["Comprehensive solutions for web development."]}
+  />
+  <ProductList
+    products={products.filter((x) => x.addon)}
+    classes={{ container: "pt-0 md:pt-0" }}
+  />
 
   <Features
     tagline="Features"

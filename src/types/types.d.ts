@@ -38,13 +38,15 @@ export interface Service {
   icon: string;
 }
 
-export interface Price {
+export interface Product {
   title: string;
   description: string;
   monthly: boolean;
+  setupFee: boolean;
   price: string;
   icon: string;
   features?: string[];
+  addon: boolean;
 }
 
 export interface NavLink {
@@ -100,8 +102,8 @@ export interface ServiceListProps extends HeadlineProps {
   services?: Service[];
 }
 
-export interface PriceListProps extends HeadlineProps {
-  prices?: Price[];
+export interface ProductListProps extends HeadlineProps {
+  products?: Product[];
 }
 
 export interface ValuesProps extends HeadlineProps {
