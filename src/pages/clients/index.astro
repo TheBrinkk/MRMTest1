@@ -27,7 +27,7 @@ const optimizedImage = await getImage({
     actions={[
       {
         text: "Contact Us",
-        href: "/contact",
+        href: import.meta.env.BASE_URL + "/contact",
         variant: "primary",
         icon: "lucide:mail",
       },

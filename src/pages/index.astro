@@ -11,8 +11,7 @@ import ProductList from "@/components/widgets/ProductList.astro";
 
 const metadata = {
   title: `${siteConfig.name} — Central Texas Digital Marketers`,
-  description:
-    "A modern and professional template for your web projects with Astro and Tailwind CSS. Boost your development with a solid foundation.",
+  description: "Central Texas Marketing and Digital Solutions",
   ignoreTitleTemplate: true,
 };
 
@@ -65,7 +64,7 @@ const products = [
   {
     title: "Website Changes",
     description: "We will tackle the changes you need made to your website.",
-    price: "$500",
+    price: "",
     setupFee: false,
     monthly: false,
     addon: true,
@@ -73,9 +72,8 @@ const products = [
       "Optimize Page Speed",
       "Make Content Changes",
       "Manage Google scripts",
-      "",
     ],
-    icon: "lucide:brain-cog",
+    icon: "lucide:monitor-cog",
   },
 ];
 ---
@@ -88,13 +86,13 @@ const products = [
     actions={[
       {
         text: "Get Started",
-        href: "https://github.com/devgelo-labs/astro-starter-pro",
+        href: import.meta.env.BASE_URL + "/contact",
         variant: "primary",
-        icon: "lucide:github",
+        icon: "lucide:mouse-pointer-click",
       },
       {
         text: "Our Services",
-        href: "/services",
+        href: "#services",
         variant: "secondary",
         icon: "lucide:arrow-right",
         ariaLabel: "Learn more about our services",
@@ -103,6 +101,7 @@ const products = [
   />
 
   <Content
+    id="services"
     tagline="Services"
     title="Our Services"
     description={[

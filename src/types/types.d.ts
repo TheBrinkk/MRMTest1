@@ -1,7 +1,7 @@
 export interface CallToAction {
   text: string;
   href: string;
-  linkOut?: boolean;
+  linkOut?: "_blank";
   variant?: "primary" | "secondary" | "link";
   icon?: string;
   ariaLabel?: string;

@@ -18,6 +18,8 @@ const {
 } = Astro.props as HeroProps;
 
 const { container: containerClassProp = "" } = classes;
+
+const target = 'target="_blank"';
 ---
 
 <WidgetWrapper
@@ -62,6 +64,7 @@ const { container: containerClassProp = "" } = classes;
           actions.map((action) => (
             <Button
               href={action.href}
+              target={action.linkOut as "_self" | "_blank"}
               variant={action.variant as "primary" | "secondary"}
               size="lg"
               aria-label={action.ariaLabel}
