@@ -5,30 +5,13 @@ import { Icon } from "astro-icon/components";
 //import { Image } from "astro:assets";
 ---
 
-<script>
-  function handleClick() {
-    for (const child of document.getElementsByClassName("sublink")) {
-      //console.log(child.tagName);
-      if (child.classList.contains("visible")) {
-        child.classList.remove("visible");
-      } else {
-        child.classList.add("visible");
-      }
-    }
-  }
-  const result = document.getElementsByClassName("parentnav");
-  for (const el of result) {
-    el.addEventListener("click", handleClick);
-  }
-</script>
-
 <nav
   class="fixed top-0 z-50 w-full border-b border-border bg-background md:bg-background/50 md:backdrop-blur"
 >
   <div
-    class="mx-auto flex max-w-4xl items-center justify-center px-4 py-2 sm:px-6 lg:px-4 grid grid-cols-4 gap-4"
+    class="mx-auto flex max-w-4xl items-center justify-center px-4 py-2 sm:px-6 lg:px-4 grid grid-cols-3 gap-2"
   >
-    <div class="justify-center col-span-2">
+    <div class="justify-center col-span-3 md:col-span-1 md:col-start-2">
       <a
         href="/"
         class="text-xl font-bold tracking-tight text-foreground transition-colors hover:text-primary mx-auto"
@@ -84,51 +67,50 @@ import { Icon } from "astro-icon/components";
     </div>
 
     <div class="hidden md:flex items-center gap-4"><ThemeToggle /></div>
-
-    <!-- Mobile Menu Button -->
-    <div class="md:hidden flex items-center">
-      <button
-        id="mobile-menu-button"
-        type="button"
-        class="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-white hover:bg-white/10 focus:outline-none transition-colors"
-        aria-controls="mobile-menu"
-        aria-expanded="false"
+  </div>
+  <!-- Mobile Menu Button -->
+  <div class="md:hidden flex items-center">
+    <button
+      id="mobile-menu-button"
+      type="button"
+      class="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-white hover:bg-white/10 focus:outline-none transition-colors"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Open main menu</span>
+      <!-- Icon when menu is closed -->
+      <svg
+        id="menu-icon-closed"
+        class="block h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        aria-hidden="true"
       >
-        <span class="sr-only">Open main menu</span>
-        <!-- Icon when menu is closed -->
-        <svg
-          id="menu-icon-closed"
-          class="block h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-        <!-- Icon when menu is open -->
-        <svg
-          id="menu-icon-open"
-          class="hidden h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-      <div class="ml-2">
-        <ThemeToggle />
-      </div>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+      <!-- Icon when menu is open -->
+      <svg
+        id="menu-icon-open"
+        class="hidden h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <div class="ml-2">
+      <ThemeToggle />
     </div>
   </div>
 
@@ -142,7 +124,7 @@ import { Icon } from "astro-icon/components";
             <div>
               <a
                 href={link.href}
-                class="block rounded-md px-3 py-2 text-base font-medium text-foreground transition-colors hover:bg-white/10 hover:text-primary"
+                class="block rounded-md px-3 py-2 text-base font-medium text-foreground transition-colors"
               >
                 {link.text}
               </a>
@@ -151,7 +133,7 @@ import { Icon } from "astro-icon/components";
                   <li class="bg-background">
                     <a
                       href={sublink.href}
-                      class="sublink block rounded-md px-3 py-2 text-base font-medium text-foreground transition-colors hover:bg-white/10 hover:text-primary"
+                      class="block rounded-md px-3 py-2 text-base font-medium text-foreground transition-colors"
                     >
                       {sublink.text}
                     </a>
@@ -162,7 +144,7 @@ import { Icon } from "astro-icon/components";
           ) : (
             <a
               href={link.href}
-              class="block rounded-md px-3 py-2 text-base font-medium text-foreground transition-colors hover:bg-white/10 hover:text-primary"
+              class="block rounded-md px-3 py-2 text-base font-medium text-foreground transition-colors"
             >
               {link.text}
             </a>
@@ -181,17 +163,42 @@ import { Icon } from "astro-icon/components";
 </nav>
 
 <script>
-  const button = document.getElementById("mobile-menu-button");
-  const menu = document.getElementById("mobile-menu");
-  const iconClosed = document.getElementById("menu-icon-closed");
-  const iconOpen = document.getElementById("menu-icon-open");
+  function handleClick() {
+    for (const child of document.getElementsByClassName("sublink")) {
+      //console.log(child.tagName);
+      if (child.classList.contains("visible")) {
+        child.classList.remove("visible");
+      } else {
+        child.classList.add("visible");
+      }
+    }
+  }
+  const result = document.getElementsByClassName("parentnav");
+  for (const el of result) {
+    el.addEventListener("click", handleClick);
+  }
 
-  button?.addEventListener("click", () => {
-    const isExpanded = button.getAttribute("aria-expanded") === "true";
+  document.addEventListener("astro:page-load", () => {
+    const button = document.getElementById("mobile-menu-button");
+    const menu = document.getElementById("mobile-menu");
+    const iconClosed = document.getElementById("menu-icon-closed");
+    const iconOpen = document.getElementById("menu-icon-open");
 
-    button.setAttribute("aria-expanded", String(!isExpanded));
-    menu?.classList.toggle("hidden");
-    iconClosed?.classList.toggle("hidden");
-    iconOpen?.classList.toggle("hidden");
+    // Remove old event listener if it exists to prevent multiple triggers
+    const newButton = button?.cloneNode(true);
+    if (newButton && button && button.parentNode) {
+      button.parentNode.replaceChild(newButton, button);
+    }
+
+    const finalButton = document.getElementById("mobile-menu-button");
+
+    finalButton?.addEventListener("click", () => {
+      const isExpanded = finalButton.getAttribute("aria-expanded") === "true";
+
+      finalButton.setAttribute("aria-expanded", String(!isExpanded));
+      menu?.classList.toggle("hidden");
+      iconClosed?.classList.toggle("hidden");
+      iconOpen?.classList.toggle("hidden");
+    });
   });
 </script>
