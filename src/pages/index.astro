@@ -20,7 +20,7 @@ const products = [
     title: "Starter Setup",
     description:
       "Get setup for the basics, we will get you on the digital map and start getting Texans to see you.",
-    price: "500",
+    price: "$500",
     monthly: false,
     setupFee: true,
     addon: false,
@@ -44,7 +44,7 @@ const products = [
       "You control the process",
       "* Your budget adds to the cost",
     ],
-    icon: "lucide:search-alert",
+    icon: "lucide:chart-no-axes-combined",
   },
   {
     title: "Automate Outreach",
@@ -64,7 +64,7 @@ const products = [
   {
     title: "Website Changes",
     description: "We will tackle the changes you need made to your website.",
-    price: "",
+    price: "Negotiable",
     setupFee: false,
     monthly: false,
     addon: true,
@@ -75,6 +75,34 @@ const products = [
     ],
     icon: "lucide:monitor-cog",
   },
+  {
+    title: "Google Setup",
+    description: "We will put all the Google pieces in place to run campaigns.",
+    price: "Negotiable",
+    setupFee: false,
+    monthly: false,
+    addon: true,
+    features: [
+      "Setup Google Analytics",
+      "Setup Google Ads",
+      "Manage your Google campaigns",
+    ],
+    icon: "lucide:search-alert",
+  },
+  {
+    title: "Advanced Integrations",
+    description: "Add technical integrations to make your life easier",
+    price: "Negotiable",
+    setupFee: false,
+    monthly: false,
+    addon: true,
+    features: [
+      "Setup 3rd party integrations",
+      "Connect the separate pieces of your business",
+      "Manage your workflow",
+    ],
+    icon: "lucide:combine",
+  },
 ];
 ---
 
@@ -82,7 +110,7 @@ const products = [
   <Hero
     title={`Central Texas based <br class="hidden md:block" /> <span class="bg-linear-to-r from-rose-700 via-blue-400 to-blue-900 bg-clip-text text-transparent">Web Marketing</span>`}
     tagline={`${siteConfig.description}`}
-    description={`<p>We take pride in supporting central Texas businesses that make us proud.</p><p>We support those who give back to their community.</p><p> We help Texans get exposure and help them establish themselves in the digital world.</p>`}
+    description={`<p>We take pride in supporting central Texas businesses that make Texans proud.</p><p>We support those who give back to their community.</p><p> We help Texans gain exposure and help them establish themselves in the digital world.</p>`}
     actions={[
       {
         text: "Get Started",
@@ -153,28 +181,29 @@ const products = [
   <Content2
     items={[
       {
-        title: "Responsive Design",
+        title: "Establish Digital Footpring",
         description:
-          "Base configuration for Meta tags, Open Graph, and Sitemap generation.",
+          "We will help setup all the technical details required to get you on the digital map.",
         icon: "lucide:scan-search",
         iconClass: "bg-blue-500/10 text-blue-400",
       },
       {
-        title: "High Performance",
-        description: "Lightweight structure for fast load times.",
+        title: "Website Creation",
+        description:
+          "We will build you a website if you need it, with all the bells and whistles to drive your Texan business forward.",
         icon: "lucide:zap",
         iconClass: "bg-purple-500/10 text-purple-400",
       },
       {
-        title: "Tailwind v4",
+        title: "Website Analysis",
         description:
-          "Integrated configuration with the latest version of Tailwind CSS.",
+          "We study your website and make sure your are on a solid footing.",
         icon: "lucide:palette",
         iconClass: "bg-pink-500/10 text-pink-400",
       },
     ]}
     image={devImg}
-    imageAlt="Development"
+    imageAlt="Business Development"
   >
     <Fragment>
       <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
