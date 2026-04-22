@@ -3,8 +3,8 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { siteConfig } from "@/config/site";
 import Hero from "@/components/widgets/Hero.astro";
 import Features from "@/components/widgets/Features.astro";
-import devImg from "@/assets/images/dev_balanced.png";
-import openSourceImg from "@/assets/images/open-source.png";
+import texasSignImg from "@/assets/images/texas-sign-2048x2048.jpg";
+import webDevImg from "@/assets/images/webdev-2048x2048.jpg";
 import Content from "@/components/widgets/Content.astro";
 import Content2 from "@/components/widgets/Content2.astro";
 import ProductList from "@/components/widgets/ProductList.astro";
@@ -110,7 +110,7 @@ const products = [
   <Hero
     title={`Central Texas based <br class="hidden md:block" /> <span class="bg-linear-to-r from-rose-700 via-blue-400 to-blue-900 bg-clip-text text-transparent">Web Marketing</span>`}
     tagline={`${siteConfig.description}`}
-    description={`<p>We take pride in supporting central Texas businesses that make Texans proud.</p><p>We support those who give back to their community.</p><p> We help Texans gain exposure and help them establish themselves in the digital world.</p>`}
+    bg="bg-[url(https://media.istockphoto.com/id/1148241160/photo/willow-city-loop-texan-spring-landscape-with-blue-bonnets.jpg?s=2048x2048&w=is&k=20&c=oqtP9Gcxten1aPnigkVyid3szYb5GWjjm_oIZeFMLMU=)] bg-center"
     actions={[
       {
         text: "Get Started",
@@ -126,7 +126,19 @@ const products = [
         ariaLabel: "Learn more about our services",
       },
     ]}
-  />
+  >
+    <div
+      class="text-slate-50 text-shadow-md text-shadow-slate-900 text-center font-black mt-4 text-4xl"
+    >
+      <p>
+        We take pride in supporting central Texas businesses that make Texans
+        proud.
+      </p><p>We support those who give back to their community.</p><p>
+        We help Texans gain exposure and help them establish themselves in the
+        digital world.
+      </p>
+    </div>
+  </Hero>
 
   <Content
     id="services"
@@ -202,7 +214,7 @@ const products = [
         iconClass: "bg-pink-500/10 text-pink-400",
       },
     ]}
-    image={devImg}
+    image={webDevImg}
     imageAlt="Business Development"
   >
     <Fragment>
@@ -236,7 +248,7 @@ const products = [
         iconClass: "bg-teal-500/10 text-teal-400",
       },
     ]}
-    image={openSourceImg}
+    image={texasSignImg}
     imageAlt="Community Driven"
     isReversed={true}
   >

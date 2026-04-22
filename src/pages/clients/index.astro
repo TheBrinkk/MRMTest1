@@ -2,7 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getImage } from "astro:assets";
 import Content2 from "@/components/widgets/Content2.astro";
-import aboutImage from "@/assets/images/about-office.webp";
+import clientsImage from "@/assets/images/clients-2048x2048.jpg";
 
 const metadata = {
   title: "Clients",
@@ -10,8 +10,8 @@ const metadata = {
 };
 
 const optimizedImage = await getImage({
-  src: aboutImage,
-  format: "webp",
+  src: clientsImage,
+  format: "jpg",
 });
 ---
 
@@ -22,7 +22,7 @@ const optimizedImage = await getImage({
       "We are Texans looking to help Texans help more people. We have standards that we want to apply to marketing, we only work with companies that have proven that they our up to our standards. We take serious consideration for clients that show they are doing good for their communities and show Texan pride. We give Veterans discounts and prioritize giving back for any client we take on. We are selective in who we give our expertise to, we want to help build reputation.",
     ]}
     tagline="Clients"
-    image={aboutImage}
+    image={clientsImage}
     imageAlt="Modern web development office"
     actions={[
       {

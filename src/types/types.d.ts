@@ -12,6 +12,7 @@ export interface Feature {
   description: string;
   icon?: string;
   iconClass?: string;
+  cta?: CallToAction;
 }
 
 export interface ClientFeature {
@@ -60,7 +61,9 @@ export interface Widget {
   isDark?: boolean;
   bg?: string;
   containerClass?: string;
+  descContainerClass?: string;
   classes?: Record<string, string>;
+  descClasses?: Record<string, string>;
   animate?: boolean;
 }
 

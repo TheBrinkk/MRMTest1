@@ -2,7 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Features from "@/components/widgets/Features.astro";
 import Content from "@/components/widgets/Content.astro";
-import Form from "@/components/ui/Form.astro";
+import { siteConfig } from "@/config/site";
 
 const metadata = {
   title: "Contact",
@@ -40,6 +40,10 @@ const visionText = ["Get in touch with us to discuss your next project."];
         description: "+123 456 7890",
         icon: "lucide:phone",
         iconClass: "bg-green-500/10 text-green-400",
+        cta: {
+          href: siteConfig.socialLinks.telenumber,
+          text: siteConfig.phonenumber,
+        },
       },
       {
         title: "Email",
@@ -49,7 +53,7 @@ const visionText = ["Get in touch with us to discuss your next project."];
       },
       {
         title: "Location",
-        description: "City, Country",
+        description: "San Antonio, Texas",
         icon: "lucide:map-pin",
         iconClass: "bg-red-500/10 text-red-400",
       },

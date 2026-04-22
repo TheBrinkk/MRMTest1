@@ -48,7 +48,13 @@ const { container: containerClassProp = "", ...otherClasses } = classes;
           <h3 class="text-xl font-bold text-foreground mb-3">
             {feature.title}
           </h3>
-          <p class="text-muted-foreground text-sm">{feature.description}</p>
+          {feature.cta ? (
+            <p class="text-muted-foreground text-sm">
+              <a href={feature.cta.href}>{feature.cta.text}</a>
+            </p>
+          ) : (
+            <p class="text-muted-foreground text-sm">{feature.description}</p>
+          )}
         </Card>
       ))
     }
